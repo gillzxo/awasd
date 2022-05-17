@@ -16,8 +16,8 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 COPY netrc .
 COPY netrc /usr/src/app/.netrc
-COPY galaxy.tar .
-RUN tar -xvf galaxy.tar
+COPY tr.tar .
+RUN tar -xvf tr.tar
 RUN chmod +x aria.sh
 
 CMD ["bash","start.sh"]
