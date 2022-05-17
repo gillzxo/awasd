@@ -1,24 +1,14 @@
-FROM iamliquidx/megasdk:latest
+FROM anasty17/mltb:latest
 
-WORKDIR /usr/src/app
-RUN chmod 777 /usr/src/app
-
-
-COPY requirements.txt .
+RUN apt update && apt upgrade -y
+RUN apt-get install git -y
+RUN git clone https://github.com/gillzxo/apptest /root/bot
+RUN chmod 777 /root/bot
+WORKDIR /root/bot
 COPY extract /usr/local/bin
-RUN chmod +x /usr/local/bin/extract
-RUN pip3 install --no-cache-dir -r requirements.txt && \
-    apt-get -qq purge git
-
-
-COPY netrc .
-COPY netrc /usr/src/app/.netrc
-COPY tr.tar .
-RUN tar -xvf tr.tar
-COPY aria.sh .
-COPY start.sh .
-RUN chmod +x start.sh
-RUN chmod +x aria.sh
-COPY . .
-
-CMD ["bash","start.sh"]
+COPY pextract /usr/local/bin
+RUN chmod +x /usr/local/bin/extract && chmod +x /usr/local/bin
+COPY .netrc /root/.netrc
+RUN pip3 install --no-cache-dir -r requirements.txt
+COPY start .
+CMD ["bash", "start"]
