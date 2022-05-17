@@ -1,0 +1,15 @@
+{
+    "name": "don't copy",
+    "description": "@Bot_empire",
+    "logo": "https://telegra.ph/",
+    "keywords": [
+      "tm",
+      "phon"
+    ],
+    "stack": "container",
+    "addons": [
+      {
+        "plan": "heroku-postgresql"
+      }
+    ]
+}
