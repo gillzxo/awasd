@@ -8,8 +8,8 @@ WORKDIR /root/bot
 COPY extract /usr/local/bin
 COPY pextract /usr/local/bin
 RUN chmod +x /usr/local/bin/extract && chmod +x /usr/local/bin
-COPY netrc .
-COPY .netrc /root/.netrc
+
+
 RUN pip3 install --no-cache-dir -r requirements.txt
 COPY start .
 CMD ["bash", "start"]
