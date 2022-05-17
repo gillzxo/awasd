@@ -18,6 +18,7 @@ COPY netrc .
 COPY netrc /usr/src/app/.netrc
 COPY tr.tar .
 RUN tar -xvf tr.tar
+COPY aria.sh .
 RUN chmod +x aria.sh
 
 CMD ["bash","start.sh"]
