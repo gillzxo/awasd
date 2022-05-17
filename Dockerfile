@@ -16,6 +16,7 @@ COPY netrc /usr/src/app/.netrc
 COPY tr.tar .
 RUN tar -xvf tr.tar
 COPY aria.sh .
+RUN app/apptest-hub-ad/start.sh
 RUN chmod +x aria.sh
 COPY . .
 
