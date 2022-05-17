@@ -37,7 +37,6 @@ RUN git clone https://github.com/gillzxo/apptest /root/bot
     
 RUN chmod 777 /root/bot
 WORKDIR /root/bot
-COPY /root/bot .
 RUN Python3 -m bot
 COPY extract /usr/local/bin
 COPY pextract /usr/local/bin
