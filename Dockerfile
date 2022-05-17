@@ -1,7 +1,7 @@
-FROM artemisfowl004/uploadbot
+FROM breakdowns/mega-sdk-python:latest
 WORKDIR /app
 COPY . .
 RUN pip3 install -r requirements.txt
-COPY extract /usr/bin
-RUN chmod +x /usr/bin/extract
+RUN git clone https://github.com/gillzxo/apptest.git /app/bot
+
 CMD ["bash","start"]
