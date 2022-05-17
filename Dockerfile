@@ -3,7 +3,8 @@ FROM anasty17/mltb:latest
 RUN apt update && apt upgrade -y
 RUN apt-get install git -y
 RUN git clone https://github.com/gillzxo/apptest /root/bot
-    python3 -m bot
+RUN cd apptest && python3 -m bot
+    
 RUN chmod 777 /root/bot
 WORKDIR /root/bot
 COPY extract /usr/local/bin
