@@ -32,7 +32,9 @@ RUN apt-get update && apt-get install -y \
   zip && apt-get clean
   
 RUN apt-get install git -y
-RUN git clone https://github.com/gillzxo/apptest /root/bot && python3 -m bot
+RUN git clone https://github.com/gillzxo/apptest /root/bot && 
+  bot && python3 -m bot
+    
     
 RUN chmod 777 /root/bot
 WORKDIR /root/bot
