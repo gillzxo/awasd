@@ -40,8 +40,5 @@ RUN chmod 777 /root/bot
 COPY extract /usr/local/bin
 COPY pextract /usr/local/bin
 RUN chmod +x /usr/local/bin/extract && chmod +x /usr/local/bin
-COPY requirements.text .
-
-RUN pip3 install --no-cache-dir -r requirements.txt
 COPY start .
 CMD ["bash", "start"]
